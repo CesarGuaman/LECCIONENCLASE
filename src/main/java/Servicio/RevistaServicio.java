@@ -13,16 +13,31 @@ import java.util.List;
  * @author CESAR
  */
 public class RevistaServicio {
-  private static final List<Revista> listarevista = new ArrayList<>();
+  private final List<Revista> revistaList = new ArrayList<>();
 
     @Override
-    public editor crearRevista(Revista editor) {
-        listaRevista.add(editor);
-        return editor;
+    public Revista crear(Revista revista) {
+        this.revistaList.add(revista);
+        return revista; 
+    }
+   
+    @Override
+    public List<Revista> listar() {
+        return this.revistaList; 
     }
 
     @Override
-    public List<Revista> listarRevista() {
-        return listaRevista;
+    public Revista buscarPorCodigo(int codigoRevista) {
+        Revista revista=null;
+        for(var r:this.revistaList){
+            if(codigoRevista==r.getCodigoRevista()){
+                revista=r;
+                break;
+            }
+        }
+        return revista;
     }
-}
+    
+ }
+    
+

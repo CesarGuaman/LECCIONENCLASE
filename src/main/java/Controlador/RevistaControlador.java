@@ -14,17 +14,17 @@ import java.util.List;
  */
 public class RevistaControlador {
   private final RevistaServicio revistaServicio = new RevistaServicio();
-    public final RevistaServicio departamentoServicio = new RevistaServicio();
     
-    public Revista crearRevista(int codigo, String nombre,String editor,String ubicacion,String pais){
-        
-        
-        var nuevoRevista =  new Revista(codigo, nombre, editor, ubicacion, pais);
-        return revistaServicio.crearRevista(nuevoRevista);
-               
+    public Revista crear(String [] args){
+        var revista = new Revista(Integer.valueOf(args[0]),args[1],args[2],
+                Integer.valueOf(args[3]));
+        this.revistaServicio.crear(revista);
+        return revista;
     }
     
-    public List<Revista> listarEmpleados(){
-        return revistaServicio.listarRevista();
+    public List<Revista> listar(){
+        return this.revistaServicio.listar();
     }
+     
+  
 }

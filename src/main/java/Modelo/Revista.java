@@ -9,31 +9,26 @@ package Modelo;
  * @author CESAR
  */
 public class Revista {
-   private int codigo;
+   private int codigoRevista;
     private String nombre;
-    private String editor;
-    private String ubicacion;
-    private String pais;
+    private String categoria;
+    private int edicion; 
+    private int revistasVendidas;
 
-    public Revista(int codigo, String editor, String ubicacion, String pais) {
-        this.codigo = codigo;
-        this.editor = editor;
-        this.ubicacion = ubicacion;
-        this.pais = pais;
-    }
-
-    public Revista(int codigo, String nombre, String editor) {
-        this.codigo = codigo;
+    public Revista(int codigoRevista, String nombre, String categoria, int edicion, int revistasVendidas) {
+        this.codigoRevista = codigoRevista;
         this.nombre = nombre;
-        this.editor = editor;
+        this.categoria = categoria;
+        this.edicion = edicion;
+        this.revistasVendidas = revistasVendidas;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCodigoRevista() {
+        return codigoRevista;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigoRevista(int codigoRevista) {
+        this.codigoRevista = codigoRevista;
     }
 
     public String getNombre() {
@@ -44,35 +39,36 @@ public class Revista {
         this.nombre = nombre;
     }
 
-    public String getEditor() {
-        return editor;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setEditor(String editor) {
-        this.editor = editor;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
+    public int getEdicion() {
+        return edicion;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setEdicion(int edicion) {
+        this.edicion = edicion;
     }
 
-    public String getPais() {
-        return pais;
+    public int getRevistasVendidas() {
+        return revistasVendidas;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setRevistasVendidas(int revistasVendidas) {
+        this.revistasVendidas = revistasVendidas;
     }
 
     @Override
     public String toString() {
-        return "Revista{" + "codigo=" + codigo + ", nombre=" + nombre +
-                ", editor=" + editor + ", ubicacion=" + ubicacion +
-                ", pais=" + pais + '}';
+        return "Revista{" + "codigoRevista=" + codigoRevista +
+                ", nombre=" + nombre + ", categoria=" + categoria +
+                ", edicion=" + edicion + ", revistasVendidas=" +
+                revistasVendidas + '}';
     }
     
 }
